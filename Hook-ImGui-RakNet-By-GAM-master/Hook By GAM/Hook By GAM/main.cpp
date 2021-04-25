@@ -201,7 +201,7 @@ void RenderGUI()
 			}
 			ImGui::EndMenu();
 		}
-		if (ImGui::BeginMenu("Informations"))
+		if (ImGui::BeginMenu("Contribuitors"))
 		{
 			if (ImGui::Button("Cheat Info", ImVec2(125.f, 20.f)))
 			{
