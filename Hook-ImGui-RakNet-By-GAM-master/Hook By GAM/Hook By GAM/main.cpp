@@ -94,45 +94,101 @@ CD3DHook *pD3DHook;
 void theme()
 {
 	ImGuiStyle& style = ImGui::GetStyle();
+	style.Colors[ImGuiCol_Text] = ImVec4(0.90f, 0.90f, 0.90f, 1.00f);
+	style.Colors[ImGuiCol_TextDisabled] = ImVec4(0.60f, 0.60f, 0.60f, 1.00f);
+	style.Colors[ImGuiCol_WindowBg] = ImVec4(0.00f, 0.00f, 0.00f, 1.00f);
+	style.Colors[ImGuiCol_ChildWindowBg] = ImVec4(0.00f, 0.00f, 0.00f, 0.00f);
+	style.Colors[ImGuiCol_PopupBg] = ImVec4(0.05f, 0.05f, 0.10f, 0.90f);
+	style.Colors[ImGuiCol_Border] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_BorderShadow] = ImVec4(0.00f, 0.00f, 0.00f, 0.00f);
+	style.Colors[ImGuiCol_FrameBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.30f);
+	style.Colors[ImGuiCol_FrameBgHovered] = ImVec4(0.90f, 0.80f, 0.80f, 0.40f);
+	style.Colors[ImGuiCol_FrameBgActive] = ImVec4(0.90f, 0.65f, 0.65f, 0.45f);
+	style.Colors[ImGuiCol_TitleBg] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_TitleBgActive] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_MenuBarBg] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_ScrollbarBg] = ImVec4(0.20f, 0.25f, 0.30f, 0.60f);
+	style.Colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.84f, 0.01f, 0.01f, 0.59f);
+	style.Colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(1.00f, 0.00f, 0.00f, 1.00f);
+	style.Colors[ImGuiCol_ComboBg] = ImVec4(0.20f, 0.20f, 0.20f, 0.99f);
+	style.Colors[ImGuiCol_CheckMark] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_SliderGrab] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_SliderGrabActive] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_Button] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_ButtonHovered] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_ButtonActive] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_Header] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_HeaderHovered] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_HeaderActive] = ImVec4(0.00f, 0.53f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_Column] = ImVec4(0.50f, 0.50f, 0.50f, 1.00f);
+	style.Colors[ImGuiCol_ColumnHovered] = ImVec4(0.70f, 0.60f, 0.60f, 1.00f);
+	style.Colors[ImGuiCol_ColumnActive] = ImVec4(0.90f, 0.70f, 0.70f, 1.00f);
+	style.Colors[ImGuiCol_ResizeGrip] = ImVec4(1.00f, 1.00f, 1.00f, 0.30f);
+	style.Colors[ImGuiCol_ResizeGripHovered] = ImVec4(1.00f, 1.00f, 1.00f, 0.60f);
+	style.Colors[ImGuiCol_ResizeGripActive] = ImVec4(1.00f, 1.00f, 1.00f, 0.90f);
+	style.Colors[ImGuiCol_CloseButton] = ImVec4(0.50f, 0.50f, 0.90f, 0.50f);
+	style.Colors[ImGuiCol_CloseButtonHovered] = ImVec4(0.70f, 0.70f, 0.90f, 0.60f);
+	style.Colors[ImGuiCol_CloseButtonActive] = ImVec4(0.70f, 0.70f, 0.70f, 1.00f);
+	style.Colors[ImGuiCol_PlotLines] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
+	style.Colors[ImGuiCol_PlotLinesHovered] = ImVec4(0.90f, 0.70f, 0.00f, 1.00f);
+	style.Colors[ImGuiCol_PlotHistogram] = ImVec4(0.90f, 0.70f, 0.00f, 1.00f);
+	style.Colors[ImGuiCol_PlotHistogramHovered] = ImVec4(1.00f, 0.60f, 0.00f, 1.00f);
+	style.Colors[ImGuiCol_TextSelectedBg] = ImVec4(0.00f, 0.00f, 1.00f, 0.35f);
+	style.Colors[ImGuiCol_ModalWindowDarkening] = ImVec4(0.20f, 0.20f, 0.20f, 0.35f);
+	style.WindowTitleAlign = ImGuiAlign_Center;
+}
+void renko()
+{
+	ImGuiStyle& style = ImGui::GetStyle();
 	ImVec4* colors = ImGui::GetStyle().Colors;
 	style.WindowRounding = 0.00f;
 	style.ScrollbarSize = 15.00f;
 	style.ScrollbarRounding = 0.00f;
 	colors[ImGuiCol_Text] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
 	colors[ImGuiCol_TextDisabled] = ImVec4(0.60f, 0.60f, 0.60f, 0.68f);
-	colors[ImGuiCol_WindowBg] = ImVec4(0.15f, 0.15f, 0.15f, 1.00f);
-	colors[ImGuiCol_PopupBg] = ImVec4(0.10f, 0.10f, 0.10f, 0.94f);
+	// 0.098, 0.098, 0.105
+	colors[ImGuiCol_WindowBg] = ImVec4(0.098f, 0.098f, 0.105f, 1.00f);
+	// 0.011, 0.388, 1
+	colors[ImGuiCol_PopupBg] = ImVec4(0.278f, 0.278f, 0.258f, 1.00f);
 	colors[ImGuiCol_Border] = ImVec4(0.34f, 0.33f, 0.34f, 1.00f);
 	colors[ImGuiCol_BorderShadow] = ImVec4(0.00f, 0.00f, 0.00f, 0.00f);
-	colors[ImGuiCol_FrameBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.33f);
-	colors[ImGuiCol_FrameBgHovered] = ImVec4(0.80f, 0.80f, 1.00f, 0.40f);
-	colors[ImGuiCol_FrameBgActive] = ImVec4(0.50f, 0.58f, 0.85f, 0.65f);
-	colors[ImGuiCol_TitleBg] = ImVec4(0.40f, 0.40f, 0.39f, 0.80f);
-	colors[ImGuiCol_TitleBgActive] = ImVec4(0.13f, 0.41f, 0.71f, 1.00f);
-	colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.22f, 0.39f, 0.73f, 1.00f);
-	colors[ImGuiCol_MenuBarBg] = ImVec4(0.30f, 0.31f, 0.31f, 1.00f);
-	colors[ImGuiCol_ScrollbarBg] = ImVec4(0.40f, 0.40f, 0.40f, 1.00f);
-	colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.00f, 0.30f, 0.60f, 1.00f);
-	colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.00f, 0.30f, 0.66f, 1.00f);
-	colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(0.00f, 0.30f, 0.80f, 1.00f);
-	colors[ImGuiCol_CheckMark] = ImVec4(0.27f, 0.58f, 1.00f, 1.00f);
-	colors[ImGuiCol_SliderGrab] = ImVec4(0.20f, 0.70f, 1.00f, 1.00f);
-	colors[ImGuiCol_SliderGrabActive] = ImVec4(0.20f, 0.57f, 1.00f, 0.84f);
-	colors[ImGuiCol_Button] = ImVec4(0.27f, 0.58f, 1.00f, 0.78f);
-	colors[ImGuiCol_ButtonHovered] = ImVec4(0.37f, 0.64f, 1.00f, 0.94f);
-	colors[ImGuiCol_ButtonActive] = ImVec4(0.27f, 0.44f, 1.00f, 1.00f);
-	colors[ImGuiCol_Header] = ImVec4(0.13f, 0.41f, 0.71f, 1.00f);
-	colors[ImGuiCol_HeaderHovered] = ImVec4(0.27f, 0.58f, 1.00f, 1.00f);
-	colors[ImGuiCol_HeaderActive] = ImVec4(0.20f, 0.57f, 1.00f, 1.00f);
-	colors[ImGuiCol_ResizeGrip] = ImVec4(1.00f, 1.00f, 1.00f, 0.47f);
-	colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.26f, 0.59f, 0.98f, 0.67f);
-	colors[ImGuiCol_ResizeGripActive] = ImVec4(0.78f, 0.76f, 1.00f, 1.00f);
+	// 0.011, 1, 0.992
+	// 0.031, 0.392, 0.949
+	colors[ImGuiCol_FrameBg] = ImVec4(0.031f, 0.392f, 0.949f, 1.00f);
+	colors[ImGuiCol_FrameBgHovered] = ImVec4(0.011f, 1.00f, 0.992f, 0.40f);
+	colors[ImGuiCol_FrameBgActive] = ImVec4(0.031f, 0.392f, 0.949f, 1.00f);
+	// 0, 0.172, 0.619
+	// 0.007, 0.164, 0.635
+	colors[ImGuiCol_TitleBg] = ImVec4(0.007f, 0.164f, 0.635f, 1.00f);
+	colors[ImGuiCol_TitleBgActive] = ImVec4(0.007f, 0.164f, 0.635f, 1.00f);
+	colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.007f, 0.164f, 0.635f, 1.00f);
+	// 0.278, 0.278, 0.258
+	colors[ImGuiCol_MenuBarBg] = ImVec4(0.278f, 0.278f, 0.258f, 1.00f);
+	colors[ImGuiCol_ScrollbarBg] = ImVec4(0.278f, 0.278f, 0.258f, 1.00f);
+	// 0.003, 0.415, 0.027
+	colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.003f, 0.415f, 0.027f, 1.00f);
+	colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.011f, 1.00f, 0.992f, 0.40f);
+	colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(0.003f, 0.415f, 0.027f, 1.00f);
+	// 0, 0.047, 0.054
+	colors[ImGuiCol_CheckMark] = ImVec4(0.00f, 0.047f, 0.054f, 1.00f);
+	colors[ImGuiCol_SliderGrab] = ImVec4(0.00f, 0.321f, 0.247f, 1.00f);
+	colors[ImGuiCol_SliderGrabActive] = ImVec4(0.003f, 0.415f, 0.027f, 1.00f);
+	colors[ImGuiCol_Button] = ImVec4(0.011f, 0.415f, 0.019f, 0.78f);
+	colors[ImGuiCol_ButtonHovered] = ImVec4(0.011f, 1.00f, 0.992f, 0.40f);
+	colors[ImGuiCol_ButtonActive] = ImVec4(0.011f, 0.415f, 0.019f, 0.78f);
+	colors[ImGuiCol_Header] = ImVec4(0.011f, 0.415f, 0.019f, 0.78f);
+	colors[ImGuiCol_HeaderHovered] = ImVec4(0.011f, 1.00f, 0.992f, 0.40f);
+	colors[ImGuiCol_HeaderActive] = ImVec4(0.011f, 0.415f, 0.019f, 0.78f);
+	colors[ImGuiCol_ResizeGrip] = ImVec4(0.011f, 0.415f, 0.019f, 0.78f);
+	colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.011f, 1.00f, 0.992f, 0.40f);
+	colors[ImGuiCol_ResizeGripActive] = ImVec4(0.011f, 0.415f, 0.019f, 0.78f);
 	colors[ImGuiCol_PlotLines] = ImVec4(0.61f, 0.61f, 0.61f, 1.00f);
 	colors[ImGuiCol_PlotLinesHovered] = ImVec4(0.27f, 0.54f, 1.00f, 0.47f);
 	colors[ImGuiCol_PlotHistogram] = ImVec4(0.24f, 0.58f, 1.00f, 1.00f);
 	colors[ImGuiCol_PlotHistogramHovered] = ImVec4(0.23f, 0.47f, 1.00f, 1.00f);
 	colors[ImGuiCol_TextSelectedBg] = ImVec4(0.16f, 0.37f, 0.98f, 0.75f);
-
 }
 
 void RenderGUI()
@@ -176,6 +232,21 @@ void RenderGUI()
 				}
 				ImGui::EndPopup();
 			}
+				ImGui::EndMenu();
+		}
+		if (ImGui::BeginMenu("Themes"))
+		{
+			ImGui::PushItemWidth(125.f);
+			const char* items[] = { "Default", "Master", "renko" };
+			ImGui::Combo("##1000", &item, items, 2);
+			if (item == 0)
+			{
+				theme();
+			}
+			if (item == 2)
+			{
+				renko();
+			}
 			ImGui::EndMenu();
 		}
 		if (ImGui::BeginMenu("Settings"))
@@ -201,7 +272,7 @@ void RenderGUI()
 			}
 			ImGui::EndMenu();
 		}
-		if (ImGui::BeginMenu("Contribuitors"))
+		if (ImGui::BeginMenu("Informations"))
 		{
 			if (ImGui::Button("Cheat Info", ImVec2(125.f, 20.f)))
 			{
@@ -210,23 +281,17 @@ void RenderGUI()
 			ImGui::SetWindowSize(ImVec2(293.f, 80.f));
 			if (ImGui::BeginPopupModal("Cheat Info", p_open = NULL, window_flags_about))
 			{
-				ImGui::Text("Cheat Developer:");
-				ImGui::Text("Kimiksen#3122");
-				ImGui::Text("m0untain#9999");
+				ImGui::Text("❖ Developer: Kimiksen#3122, m0untain#9999");
 				ImGui::Separator();
-				ImGui::Text("Support Tehnic:");
-				ImGui::Text("nix0n#1759");
-				ImGui::Text("freshy#5129");
-				ImGui::Separator();
-				ImGui::Text("Contribuitori:");
-				ImGui::Text("Anto666#1751");
-				ImGui::Separator();
-				ImGui::Text("Licensed To: Kimiksen#3122");
+				ImGui::Text("❖ Support Tehnic: nix0n#1759, freshy#5129");
+				ImGui::Text("❖ Contribuitori: Anto666#1751");
+				ImGui::Separator(); 
+				ImGui::Text("Licensed To: Kimiksen");
 				ImGui::Text("Expire at 23-05-2021 - 18:07");
 				ImGui::Text("Your token is: bl2151aslaksjalkjgastybasoihatsas2819075mbnas");
 				ImGui::Separator();
-				ImGui::Text("RO: Pentru mai multe informatii legate de cheat contactati pe discord Kimiksen#3122");
-				ImGui::Text("EN: For more informations about this cheat contact on discord Kimiksen#3122");
+				ImGui::Text("RO: Pentru mai multe informatii legate de cheat contactati pe discord Kimiksen#3122 sau m0untain#9999");
+				ImGui::Text("EN: For more informations about this cheat contact on discord Kimiksen#3122 or m0untain#9999");
 				if (ImGui::Button("Close"))
 				{
 					ImGui::CloseCurrentPopup();
