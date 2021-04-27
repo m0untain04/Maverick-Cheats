@@ -21,6 +21,23 @@ typedef long(__stdcall* _Reset)(IDirect3DDevice9* pDevice, D3DPRESENT_PARAMETERS
 _Reset oReset = nullptr;
 
 bool Mouse_Fix = false;
+bool pooraim = false;
+bool aimbotmenu = false;
+bool c_aimbot = false;
+bool c_recoil = false;
+bool infammovar = false;
+bool normalaim = false;
+bool c_norecoil = false;
+bool poormenu = false;
+bool poormenu2 = false;
+bool Trigger = false;
+bool triggermenu = false;
+bool akpoor2 = false;
+bool combatpoor2 = false;
+bool deaglepoor2 = false;
+bool m4poor2 = false;
+bool mp5poor2 = false; 
+bool riflepoor2 = false;
 
 bool g_bwasInitialized = false;
 bool m_IsGameFullyLoaded = false;
@@ -232,12 +249,12 @@ void RenderGUI()
 				}
 				ImGui::EndPopup();
 			}
-				ImGui::EndMenu();
+			ImGui::EndMenu();
 		}
 		if (ImGui::BeginMenu("Themes"))
 		{
 			ImGui::PushItemWidth(125.f);
-			const char* items[] = { "Default", "Master", "renko" };
+			const char* items[] = { "Default", "renko" };
 			ImGui::Combo("##1000", &item, items, 2);
 			if (item == 0)
 			{
@@ -285,7 +302,7 @@ void RenderGUI()
 				ImGui::Separator();
 				ImGui::Text("❖ Support Tehnic: nix0n#1759, freshy#5129");
 				ImGui::Text("❖ Contribuitori: Anto666#1751");
-				ImGui::Separator(); 
+				ImGui::Separator();
 				ImGui::Text("Licensed To: Kimiksen");
 				ImGui::Text("Expire at 23-05-2021 - 18:07");
 				ImGui::Text("Your token is: bl2151aslaksjalkjgastybasoihatsas2819075mbnas");
@@ -305,22 +322,33 @@ void RenderGUI()
 
 	if (ImGui::CollapsingHeader("Weapon Menu"))
 	{
-		ImGui::Checkbox("Aimbot Range", &Mouse_Fix);
-		ImGui::SameLine();
-		ImGui::Button("Settings");
-		ImGui::Checkbox("Silent Aimbot", &Mouse_Fix);
-		ImGui::SameLine();
-		ImGui::Button("Settings");
-		ImGui::Checkbox("Smooth Aimbot", &Mouse_Fix);
-		ImGui::SameLine();
-		ImGui::Button("Settings");
-		ImGui::Checkbox("Rapid-Fire", &Mouse_Fix);
-		ImGui::SameLine();
-		ImGui::Button("Config");
-		ImGui::Checkbox("No Reload", &Mouse_Fix);
-		ImGui::Checkbox("ProAimbot", &Mouse_Fix);
-		ImGui::SameLine();
-		ImGui::Button("Settings");
+		ImGui::Checkbox("##68", &c_aimbot); ImGui::SameLine(); ImGui::TextColored(ImColor(255, 100, 100), "Aimbot");
+		ImGui::Checkbox("", &normalaim); ImGui::SameLine(); ImGui::TextColored(ImColor(255, 100, 100), "Smooth");
+		ImGui::SameLine(300.f);
+		if (ImGui::Button("Settings## Smooth"))
+		{
+			aimbotmenu = !aimbotmenu;
+		}
+		ImGui::Checkbox("##1", &pooraim); ImGui::SameLine(); ImGui::TextColored(ImColor(255, 100, 100), "Poor Aimbot");
+		ImGui::SameLine(300.f);
+		if (ImGui::Button("Settings##Poor Aimbot"))
+		{
+			poormenu = !poormenu;
+		}
+		ImGui::Checkbox(" Triggerbot", &Trigger);
+		ImGui::SameLine(300.f);
+		if (ImGui::Button("Settings## Triggerbot"))
+		{
+			triggermenu = !triggermenu;
+		}
+		ImGui::Checkbox("##2", &c_norecoil); ImGui::SameLine(); ImGui::TextColored(ImColor(255, 100, 100), "No Recoil");
+		ImGui::SameLine(300.f);
+		if (ImGui::Button("Settings## No Recoil"))
+		{
+			poormenu2 = !poormenu2;
+		}
+		ImGui::Checkbox("##3", &infammovar); ImGui::SameLine(); ImGui::TextColored(ImColor(255, 100, 100), "Infinite Ammo");
+
 	}
 	if (ImGui::CollapsingHeader("Visual Menu"))
 	{
@@ -365,9 +393,29 @@ void RenderGUI()
 		ImGui::SameLine();
 		ImGui::Button("Setting");
 	}
-	   ImGui::End();
+	ImGui::End();
+	//poor menu
+	if (poormenu)
+	{
+		ImGui::SetNextWindowSize(ImVec2(310.0f, 300.0f));
+		if (ImGui::Begin("Poor Aimbot Settings", p_open = NULL, window_flags))
+		{
+			ImGui::Checkbox("Deagle", &deaglepoor2);
+			ImGui::Checkbox("M4", &m4poor2);
+			ImGui::Checkbox("AK47", &akpoor2);
+			ImGui::Checkbox("Rifle", &riflepoor2);
+			ImGui::Checkbox("MP5", &mp5poor2);
+			ImGui::Checkbox("Combat Shotgun", &combatpoor2);
+			ImGui::Text(" ");
+			if (ImGui::Button("Hide", ImVec2(75.f, 20.f)))
+			{
+				poormenu = !poormenu;
+			}
+			ImGui::End();
+		}
+	}
+	//aimbotmenu
 }
-
 void mainThread(void *pvParams)
 {
 	
